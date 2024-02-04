@@ -1,25 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import styles from './style'
 
-function App() {
+import { Billing, Business, Clients, Button, CardDeal, CTA, Feedback, Footer, GetStarted, Hero, NavBar, Stats, Testimonials} from './components'
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="bg-primary w-full overflow-hidden">
+      <div className={`${styles.paddingX} ${styles.flexCenter}`}>
+        <div className={`${styles.boxWidth}`}>
+          <NavBar />
+        </div>
+      </div>
+      <div className={`bg-primary ${styles.flexStart}`}>
+        <div className={`${styles.boxWidth}`}>
+          <Hero/>
+        </div>
+      </div>
+      <div className={`bg-primary ${styles.paddingX} ${styles.flexStart}`}>
+        <div className={`${styles.boxWidth}`}>
+          <Stats/>
+          <Business/> 
+          <Billing />
+          <CardDeal/>
+          <Testimonials />
+          <Clients />
+          <CTA />
+          <Footer/>
+        </div>
+      </div>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
