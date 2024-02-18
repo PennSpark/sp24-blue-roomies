@@ -1,9 +1,22 @@
-import React from 'react'
+import React from "react";
+import { useNavigate } from "react-router-dom"; // Import useNavigate
 
-const Button = () => {
+const ButtonWhite = ({ styles }) => {
+  const navigate = useNavigate(); 
+
+  const handleClick = () => {
+    navigate('/login'); 
+  };
+
   return (
-    <div>Button</div>
-  )
-}
+    <button 
+      type="button" 
+      className={`py-4 px-6 font-poppins font-medium text-[18px] text-black bg-third rounded-[10px] outline-none ${styles}`}
+      onClick={handleClick} 
+    >
+      Get Started
+    </button>
+  );
+};
 
-export default Button
+export default ButtonWhite;

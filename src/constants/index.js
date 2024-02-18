@@ -23,23 +23,23 @@ export const features = [
   {
     id: "feature-1",
     icon: star,
-    title: "Rewards",
+    title: "Prizes",
     content:
-      "The best credit cards offer some tantalizing combinations of promotions and prizes",
+      "Good at mopping? So a special prize will be waiting for you by the end of the month!",
   },
   {
     id: "feature-2",
     icon: shield,
-    title: "100% Secured",
+    title: "Simple",
     content:
-      "We take proactive steps make sure your information and transactions are secure.",
+      "No BS and overly complicated features, just a good and easy way to clean your home.",
   },
   {
     id: "feature-3",
     icon: send,
-    title: "Balance Transfer",
+    title: "Support",
     content:
-      "A balance transfer credit card can save you a lot of money in interest charges.",
+      "Experiencing any difficulty? Just reach out to our support team that we will help you!",
   },
 ];
 
@@ -47,25 +47,25 @@ export const feedback = [
   {
     id: "feedback-1",
     content:
-      "Money is only a tool. It will take you wherever you wish, but it will not replace you as the driver.",
-    name: "Herman Jensen",
-    title: "Founder & Leader",
+      "It's the best app that I have ever used in my entire life.",
+    name: "Paul Loh",
+    title: "Soldier & Dev",
     img: people01,
   },
   {
     id: "feedback-2",
     content:
-      "Money makes your life easier. If you're lucky to have it, you're lucky.",
-    name: "Steve Mark",
-    title: "Founder & Leader",
+      "My dorm was always messy, but when I downloaded Roomies, it changed everything.",
+    name: "Haley Kang",
+    title: "Venmo requester & Cat owner",
     img: people02,
   },
   {
     id: "feedback-3",
     content:
-      "It is usually people in the money business, finance, and international trade that are really rich.",
-    name: "Kenn Gallagher",
-    title: "Founder & Leader",
+      "It is the best way to colaborate with my roommates.",
+    name: "Matthew Cho",
+    title: "Former Spark & Weird/Nice guy",
     img: people03,
   },
 ];
@@ -73,17 +73,17 @@ export const feedback = [
 export const stats = [
   {
     id: "stats-1",
-    title: "User Active",
-    value: "3800+",
+    title: "Active Users",
+    value: "60+",
   },
   {
     id: "stats-2",
-    title: "Trusted by Company",
-    value: "230+",
+    title: "College Houses",
+    value: "13+",
   },
   {
     id: "stats-3",
-    title: "Transaction",
+    title: "Dorms Administrated",
     value: "$230M+",
   },
 ];
