@@ -11,7 +11,7 @@ const LoginForm = () => {
 
   function handleSubmit(event) { 
     event.preventDefault()
-    axios.post('http://localhost:3000/login', {username, password})
+    axios.post('http://localhost:3036/login', {username, password})
     .then(res => {
       console.log(res)
       if (res.data) {
