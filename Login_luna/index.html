@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <!-- linked css file -->
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div class="wrapper">
+        <!-- form action is empty bc not submitting data yet -->
+        <form action="">
+            <h1>Login</h1>
+            <!-- for div's you can just do .input-box and div shortcut is automatic -->
+            <div class="input-box">
+                <!-- creates text field that allows user to enter text -->
+                <!-- placeholder attribute has text in input field before entering text -->
+                <!-- must be required before submission -->
+                <input type="text" placeholder="Username" required>
+                <!-- icons -->
+                <i class='bx bxs-user'></i>
+            </div>
+            <div class="input-box">
+                <input type="password" placeholder="Password" required>
+                <i class='bx bxs-lock-alt'></i>
+            </div>
+            <div class="remember-forgot">
+                <!-- check or uncheck -->
+                <label><input type="checkbox">Remember Me</label>
+                <!-- enter link to use javascript/html for password recovery process -->
+                <a href="#">Forgot Password</a>
+            </div>
+            <!-- submit indicates need to submit a form -->
+            <button type="submit" class="btn">Login</button>
+            <div class="register-link">
+                <p>Don't have an account? <a href="#">Register</a></p>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
