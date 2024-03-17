@@ -1,14 +1,14 @@
 import React from 'react';
-import LoginForm from '../../components/LoginForm';
 import { Label } from '../Label';
+import SignupForm from '../../components/SignupForm';
 
-function Login() {
+function Signup() {
   return (
     <div className="App">
       <Label />
-      <LoginForm />
+      <SignupForm />
     </div>
   );
 }
 
-export default Login;
+export default Signup;
