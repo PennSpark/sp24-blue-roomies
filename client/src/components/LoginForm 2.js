@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
+import styles from '../pages/style/lunastyle.css';
 import { useNavigate } from "react-router-dom"; 
-import '../style/lunastyle.css';
 import axios from 'axios';
 
 const LoginForm = () => {
@@ -24,10 +24,6 @@ const LoginForm = () => {
     navigate('/signup'); 
   };
 
-  const handleClick1 = () => {
-    navigate('/login'); 
-  };
-
 
   return (
     <div className='bodyWrapper'>
@@ -47,8 +43,7 @@ const LoginForm = () => {
           <label><input type="checkbox" />Remember Me</label>
           <a href="#">Forgot Password</a>
         </div> */}
-        <button type="submit" className="btn" onClick={handleClick1}>
-        Login</button>
+        <button type="submit" className="btn" >Login</button>
         <div className="register-link">
           <p>Don't have an account? <a href="#"
           onClick={handleClick} >Register

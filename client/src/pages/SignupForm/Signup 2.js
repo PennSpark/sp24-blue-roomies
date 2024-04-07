@@ -1,6 +1,6 @@
 import React from 'react';
 import { Label } from '../Label';
-import '../style/lunastyle.css';
+import styles from '../style/lunastyle.css';
 import SignupForm from '../../components/SignupForm';
 
 function Signup() {
