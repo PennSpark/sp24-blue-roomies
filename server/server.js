@@ -19,6 +19,18 @@ app.get('/', (req, res) => {
     res.send('Welcome to the application!');
 });
 
+app.post('/create-group', async (req, res) => {
+    const { groupName, groupDescription, tasks } = req.body;
+
+    const insertGroupSql = "INSERT INTO groups_table (group_name, group_description, tasks) VALUES (?, ?, ?)";
+    db.query(insertGroupSql, [groupName, groupDescription, tasks], (err, result) => {
+        if (err) {
+            console.error("Error creating group", err);
+            return res.status(500).json("Server error: failed to create group");
+        }
+        res.status(201).json({ message: "Group created successfully", result });
+    });
+});
 
 app.post('/signup', async (req, res) => {
     const { username, password } = req.body;
