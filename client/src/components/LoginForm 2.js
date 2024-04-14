@@ -1,20 +1,17 @@
 import React, {useState} from 'react';
+import styles from '../pages/style/lunastyle.css';
 import { useNavigate } from "react-router-dom"; 
-import '../style/lunastyle.css';
 import axios from 'axios';
 
-//doesn't work yet,, just putting a rough structure - must use get and useEffect???
-
-const Profile = () => {
+const LoginForm = () => {
 
   const navigate = useNavigate(); 
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
- 
   function handleSubmit(event) { 
     event.preventDefault()
-    axios.get('http://localhost:3306/profile', {username})
+    axios.post('http://localhost:3306/login', {username, password})
     .then(res => {
       console.log(res)
       if (res.data) {
@@ -25,10 +22,6 @@ const Profile = () => {
 
   const handleClick = () => {
     navigate('/signup'); 
-  };
-
-  const handleClick1 = () => {
-    navigate('/login'); 
   };
 
 
@@ -50,8 +43,7 @@ const Profile = () => {
           <label><input type="checkbox" />Remember Me</label>
           <a href="#">Forgot Password</a>
         </div> */}
-        <button type="submit" className="btn" onClick={handleClick1}>
-        Login</button>
+        <button type="submit" className="btn" >Login</button>
         <div className="register-link">
           <p>Don't have an account? <a href="#"
           onClick={handleClick} >Register
@@ -65,4 +57,4 @@ const Profile = () => {
   );
 };
 
-export default Profile;
+export default LoginForm;

@@ -1,0 +1,9 @@
+{
+    "rds_host": "database-1.cnmsuua8qk3z.us-east-2.rds.amazonaws.com",
+    "rds_port": "3306",
+    "rds_user": "luna0416",
+    "rds_password": "luna0416",
+    "rds_db": "",
+    "server_host": "localhost",
+    "server_port": "8080"
+  }

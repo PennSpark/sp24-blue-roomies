@@ -18,8 +18,23 @@ app.get('/', (req, res) => {
     res.send('Welcome to the application!');
 });
 
-
+//login should check whetehr username and password match
 app.post('/login', (req, res) => {
+    const sql = "INSERT INTO login (username, password) VALUES (?, ?)"
+    const values = [
+        req.body.username,
+        req.body.password
+    ]
+    db.query(sql, values, (err, data) => {
+        console.log("This is the error" + err)
+        console.log("This is the data" + data)
+        if (err) return res.json("Login failed");
+        return res.json(data);
+    })
+})
+
+//signup insert into database, ask gabreil
+app.post('/signup', (req, res) => {
     const sql = "INSERT INTO login (username, password) VALUES (?, ?)"
     const values = [
         req.body.username,
