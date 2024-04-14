@@ -10,11 +10,11 @@ const SignupForm = () => {
 
   function handleSubmit(event) { 
     event.preventDefault()
-    axios.post('http://localhost:3306/signup', {username, password})
+    axios.post('http://localhost:3000/signup', {username, password})
     .then(res => {
       console.log(res)
       if (res.data) {
-        navigate('/main')
+        navigate('/todo')
       }})
     .catch(err => console.log(err));
   }
