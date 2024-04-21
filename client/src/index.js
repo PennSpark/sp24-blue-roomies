@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import './pages/Leaderboard/style.css';
 
 import MainApp from './pages/MainApp';
 
@@ -14,12 +15,14 @@ import {
 import Login from './pages/LoginForm/LoginForm';
 import Signup from './pages/SignupForm/Signup';
 import Todo from './pages/Tasks/ToDo';
+import Board from './pages/Leaderboard/board';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App/>
   },
+
   {
     path: "login",
     element: <Login/>
@@ -35,7 +38,11 @@ const router = createBrowserRouter([
   {
     path: "main",
     element: <MainApp/>
-  }
+  },
+  {
+    path:"/leaderboard",
+    element: <Board />
+  },
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
