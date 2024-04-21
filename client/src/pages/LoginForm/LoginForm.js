@@ -4,19 +4,21 @@ import axios from 'axios';
 import '../style/lunastyle.css';
 
 const LoginForm = () => {
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const [showSuccessModal, setShowSuccessModal] = useState(false);  
+  const [showSuccessModal, setShowSuccessModal] = useState(false);
+  const [showErrorModal, setShowErrorModal] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
 
-  const handleSubmit = (event) => { 
+  const handleSubmit = (event) => {
     event.preventDefault();
-    axios.post('http://localhost:3000/login', {username, password})
+    axios.post('http://localhost:3000/login', { username, password })
       .then(res => {
         console.log(res);
         if (res.status === 200) {
-          setShowSuccessModal(true); 
-          setTimeout(() => { 
+          setShowSuccessModal(true);
+          setTimeout(() => {
             setShowSuccessModal(false);
             navigate('/todo');
           }, 2000);
@@ -24,11 +26,22 @@ const LoginForm = () => {
       })
       .catch(err => {
         console.log(err);
+        if (err.response && err.response.status === 401) {
+          setErrorMessage('Invalid credentials');
+        } else {
+          setErrorMessage('Server error');
+        }
+        setShowErrorModal(true);
       });
   };
 
   const handleClick = () => {
     navigate('/signup');
+  };
+
+  const closeErrorModal = () => {
+    setShowErrorModal(false);
+    setErrorMessage('');
   };
 
   return (
@@ -50,11 +63,18 @@ const LoginForm = () => {
           </div>
         </form>
       </div>
-
       {showSuccessModal && (
         <div className="modal">
           <div className="modal-content">
-            <p>User successfully logged in!</p>
+            <p>Login successful! Redirecting to todo page...</p>
+          </div>
+        </div>
+      )}
+      {showErrorModal && (
+        <div className="modal">
+          <div className="modal-content">
+            <p>{errorMessage}</p>
+            <button onClick={closeErrorModal}>Close</button>
           </div>
         </div>
       )}
