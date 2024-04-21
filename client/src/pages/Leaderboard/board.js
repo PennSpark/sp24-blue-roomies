@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import Profiles from './profiles';
 import { Leaderboard } from './database';
 import { Label } from '../Label';
-import { HealthiconsAward } from './HealthiconsAward';
 import EmojiEventsIcon from '@mui/icons-material/EmojiEvents'; 
 /*
 
