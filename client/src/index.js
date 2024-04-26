@@ -4,8 +4,7 @@ import './index.css';
 import App from './App';
 
 import reportWebVitals from './reportWebVitals';
-
-
+import './pages/Leaderboard/style.css';
 
 import MainApp from './pages/MainApp';
 import { QueryClient, QueryClientProvider } from 'react-query'; // Importing QueryClient and QueryClientProvider
@@ -18,17 +17,13 @@ import {
 } from "react-router-dom";
 import Login from './pages/LoginForm/LoginForm';
 import Signup from './pages/SignupForm/Signup';
-import Todo from './pages/Tasks/ToDo';
-
-
-const queryClient = new QueryClient();
-
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App/>
   },
+
   {
     path: "login",
     element: <Login/>
@@ -44,7 +39,7 @@ const router = createBrowserRouter([
   {
     path: "main",
     element: <MainApp/>
-  },
+  }
 ]);
 
 const root = createRoot(document.getElementById('root'));

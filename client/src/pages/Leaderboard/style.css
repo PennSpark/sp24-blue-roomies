@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* > * {
+    font-family: "Poppins", cursive;
+    margin: 0;
+}
+
+:root{
+    --color-dark: #F3F3F2;
+    --color-light: #ff8c83ff;
+}
+
+#main{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+}
+
+.board {
+    text-align: center;
+    background-color: #FFFFFF;
+    background-size: cover;
+    background-position: center;
+}
+
+.board .leaderboard {
+    margin-bottom: 1em;
+    top: 0;
+    font-family: 'Space Grotesk-Bold', Helvetica, sans-serif;
+    font-weight: bold;
+    color: #ffb95c;
+    font-size: 70px;
+    letter-spacing: 0;
+    line-height: 89px; /* Set line-height equal to the height to vertically center text */
+    width: 411px;
+    height: 89px;
+    text-align: center; /* Center text horizontally */
+    display: flex;
+}
+
+.board .trophy{
+    position: fixed;  /* Fixed positioning relative to the viewport */
+    top: 10px;        /* Distance from the top of the viewport */
+    right: 10px;      /* Distance from the right of the viewport */
+    z-index: 1000;
+}
+
+.board .duration{
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+    color: var(--color-light);
+}
+
+.board .duration > button{
+    border: 1px solid var(--color-light);
+    padding: .5em 2em;
+    border-radius: 50px;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.board .duration > button:hover{
+    background-color: var(--color-dark);
+    color: var(--color-light);
+}
+
+.active{
+    background-color: var(--color-light);
+    color: var(--color-light);
+}
+
+#profile{
+    /* display: flex; */
+
+    margin-top: 3em;
+}
+
+#profile .flex{
+    display: flex;
+    justify-content: space-between;
+    gap: 1em;
+    text-align: left;
+    margin-bottom: 2em;
+}
+
+#profile .flex .item{
+    display: flex;
+    align-items: center;
+    color: var(--color-light);
+
+}
+
+#profile .flex img{
+    width: 20%;
+    border-radius: 50%;
+}
+
+#profile .flex .info{
+   padding: 1em;
+}
+
+.text-dark{
+    color: var(--color-light);
+}
+
+

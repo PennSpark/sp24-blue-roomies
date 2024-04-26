@@ -14,7 +14,11 @@ const Profile = () => {
  
   function handleSubmit(event) { 
     event.preventDefault()
+<<<<<<< HEAD
     axios.get('http://localhost:3306/profile', {username})
+=======
+    axios.get('http://localhost:3000/profile', {username})
+>>>>>>> Leaderboard
     .then(res => {
       console.log(res)
       if (res.data) {

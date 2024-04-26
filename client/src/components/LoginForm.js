@@ -14,7 +14,7 @@ const LoginForm = () => {
     .then(res => {
       console.log(res)
       if (res.data) {
-        navigate('/main')
+        navigate('/todo')
       }})
     .catch(err => console.log(err));
   }
