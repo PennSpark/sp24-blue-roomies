@@ -202,11 +202,12 @@
 
 .trophy {
     position: relative; /* Sets the positioning context for absolute children */
-    height: 76px; /* Set the height */
-    width: 76px; /* Set the width */
+    height: auto; /* Set the height */
+    width: auto; /* Set the width */
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 10px;
 
 }
 .trophy .ellipse {
@@ -230,7 +231,7 @@
 .vector {
     position: absolute; /* Position the image absolutely to overlap the circle */
     top: 50%;
-    left: 50%;
+    left: 24%;
     transform: translate(-50%, -50%); /* Center the image within the trophy */
     max-height: 70%; /* Adjust size to fit inside the circle */
     max-width: 70%;
@@ -409,4 +410,21 @@
 
 .label1 .text-wrapper-3 {
     color: #ff8c83;
+}
+
+
+.trophy .group {
+    background-color: #292929;
+    border-radius: 38px;
+    height: 76px;
+    left: 0;
+    top: 0;
+    width: 76px;
+}
+
+.trophy .iconamoon-profile {
+    height: 76px;
+    left: 13px;
+    top: 13px;
+    width: 76x;
 }

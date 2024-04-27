@@ -9,9 +9,15 @@ import group from './GroupWhite.png'
 import Profiles from '../Leaderboard/personalProfiles';
 import { Leaderboard } from '../Leaderboard/database';
 
+
 //doesn't work yet,, just putting a rough structure - must use get and useEffect???
 
 const ProfileGroup = () => {
+  const navigate = useNavigate();
+  const handleClick1 = () => {
+      navigate('/profile');
+    };
+
   const [period, setPeriod] = useState(0);
 
     const handleClick = (e) =>{
@@ -30,10 +36,10 @@ const ProfileGroup = () => {
             <div className="box1">
             <div className="rectangle" >
               <div className="textBox" >
-                <div className="rectangle">
-                  <div className="group">
-                  <img className="fluent-person" alt="Fluent person" src={personal} />
-                    <div className="text-wrapper">personal</div>
+                <div className="rectangle" onClick={handleClick1}>
+                  <div className="group" onClick={handleClick1}>
+                  <img className="fluent-person" alt="Fluent person" src={personal} onClick={handleClick1}/>
+                    <div className="text-wrapper" onClick={handleClick1}>personal</div>
                     
                   </div>
                 </div>
@@ -52,7 +58,7 @@ const ProfileGroup = () => {
     
           </div>
           <div class='child1'>
-          <div className='bodyWrapperBoard' style={{ paddingBottom: '30px' }}>
+          <div className='bodyWrapperBoard' style={{ paddingTop: '30px' }}>
               <div className="col">
               <div className="box2">
             <div className="rectangle" >
@@ -75,7 +81,7 @@ const ProfileGroup = () => {
               </p>
             </div>
 
-            <Profiles Leaderboard={between(Leaderboard, period)}> </Profiles>
+            <Profiles Leaderboard={between(Leaderboard, period)} > </Profiles>
             </div>
             </div>
         </div>

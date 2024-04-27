@@ -1,7 +1,9 @@
 import React from "react";
-import { useNavigate } from 'react-router-dom';
 import './style/lunastyle.css';
 import vector from './vector.png';
+import pf from './pf.png'
+import { useNavigate } from 'react-router-dom';
+
 
 export const Trophy = () => {
     const navigate = useNavigate();
@@ -9,11 +11,17 @@ export const Trophy = () => {
         navigate('/leaderboard');
       };
 
+      const handleClick1 = () => {
+        navigate('/profile');
+      };
+
   return (
     <div className="trophy">
         <div className="ellipse" onClick={handleClick}/>
         <img className="vector" alt="Vector" src={vector} onClick={handleClick}/>
-        </div>
+            <img className="iconamoon-profile" alt="Iconamoon profile" src={pf} onClick={handleClick1}/>
+
+    </div>
 
   );
 };

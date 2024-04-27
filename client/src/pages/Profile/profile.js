@@ -10,6 +10,10 @@ import group from './group.png'
 //doesn't work yet,, just putting a rough structure - must use get and useEffect???
 
 const Profile = () => {
+  const navigate = useNavigate();
+  const handleClick1 = () => {
+    navigate('/profileGroup');
+  };
 
 
 
@@ -33,10 +37,10 @@ const Profile = () => {
               </div>
             </div>
           </div>
-          <div className="textBox" >
-            <div className="rectangle">
-            <div className="group">
-              <img className="fluent-person" alt="Fluent person" src={group} />
+          <div className="textBox">
+            <div className="rectangle" onClick={handleClick1}>
+            <div className="group" onClick={handleClick1}>
+              <img className="fluent-person" alt="Fluent person" src={group} onClick={handleClick1}/>
                 <div className="text-wrapper">manage roomies</div>
                 
               </div>
