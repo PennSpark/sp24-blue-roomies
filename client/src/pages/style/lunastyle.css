@@ -235,3 +235,178 @@
     max-height: 70%; /* Adjust size to fit inside the circle */
     max-width: 70%;
 }
+.parent {
+    display: flex;
+    justify-content: space-around; /* Distributes space around items */
+    align-items: center; /* Aligns items vertically in the center */
+    flex-wrap: wrap; /* Allows items to wrap onto the next line if not enough space */
+    padding: 10px; /* Adds padding inside the parent container */
+    margin: 10px auto; /* Center the parent with auto margins on both sides, if needed */
+    max-width: 100%; /* Ensures the parent does not exceed the width of its container */
+}
+.child1 {
+    display: flex; /* Ensures that the flexbox model is used */
+    flex-direction: column; /* Stacks children vertically */
+    justify-content: center; /* Centers children vertically within the container */
+    align-items: center; /* Centers children horizontally within the container */
+    width: 220px; /* Adjust width as needed */
+    padding: 10px;
+    margin: 10px; /* Provides space between this and other elements */
+    background-color: #fff; /* Optional for visibility */
+}
+
+  .child1 .text-wrapper {
+    color: #00b8b6;
+    font-family: "Space Grotesk-Bold", Helvetica;
+    font-size: 80px; /* Adjusted for better fitting, was previously 90px */
+    font-weight: 700;
+    letter-spacing: 0;
+    line-height: normal;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .box1 {
+    height: 316px;
+    width: 577px;
+  }
+
+  .box1 .rectangle {
+    background: #f3f3f3;
+    border-radius: 40px;
+    height: 286px;
+    left: 0;
+    top: 0;
+    width: 577px;
+  }
+
+  .box2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 677px;
+    width: 577px;
+  }
+
+  .box2 .rectangle {
+    background: #f3f3f3;
+    border-radius: 40px;
+    height: 677px;
+    left: 0;
+    top: 0;
+    width: 577px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 60px;
+  }
+  
+  .textBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 469px;
+    height: 79px;  
+    margin: 30px;  
+  }
+
+  .textBox .rectangle {
+    margin-top: 100px;
+    margin-left: 50px;
+    background-color: #d9d9d996;
+    border-radius: 31px;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+  }
+
+  .rectangle.blue{
+    background-color: #00b8b6;
+  }
+
+  .col {
+    display: grid;
+    place-items: center; /* Shortcut for align-items and justify-items */
+    height: 100%; /* Optional: Set a specific height if necessary */
+}
+
+.group {
+    height: auto;
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; 
+    text-align: center;
+    margin-top: 13px;
+}
+
+.group .text-wrapper {
+    color: #00b8b6;
+    font-family: "Space Grotesk-Bold", Helvetica;
+    font-size: 30px;
+    font-weight: 700;
+    left: 47px;
+    letter-spacing: 0;
+    line-height: normal;
+    top: 0;
+    text-align: center;
+}
+
+.group .fluent-person {
+    height: auto;
+    width: 43px;
+}
+
+.text-wrapper.white-text {
+    color: white; 
+}
+
+.label1 {
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 64px;
+    width: 316px;
+}
+
+.label1 .your-roomies {
+    margin-bottom: 60px;
+    margin-left: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: transparent;
+    font-family: "Space Grotesk-Bold", Helvetica;
+    font-size: 50px; /* Adjusted for better fitting, was previously 90px */
+    font-weight: 700;
+    transform: translate(-50%, -50%); /* Adjust to center exactly */
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+    text-align: center;
+}
+
+.label1 .text-wrapper {
+    color: #6d6c6c;
+    font-size: 50px;
+    margin-right: 10px;
+    margin-top: 20px;
+}
+
+.label1 .span {
+    color: #00b8b6;
+}
+
+.label1 .text-wrapper-2 {
+    color: #ffb95c;
+}
+
+.label1 .text-wrapper-3 {
+    color: #ff8c83;
+}

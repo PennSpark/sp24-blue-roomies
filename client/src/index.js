@@ -16,6 +16,8 @@ import Login from './pages/LoginForm/LoginForm';
 import Signup from './pages/SignupForm/Signup';
 import Todo from './pages/Tasks/ToDo';
 import Board from './pages/Leaderboard/board';
+import Profile from './pages/Profile/profile';
+import ProfileGroup from './pages/Profile/profileGroup';
 
 const router = createBrowserRouter([
   {
@@ -43,6 +45,14 @@ const router = createBrowserRouter([
     path:"/leaderboard",
     element: <Board />
   },
+  {
+    path:"/profile",
+    element: <Profile />
+  },
+  {
+    path:"/profileGroup",
+    element: <ProfileGroup />
+  }
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
