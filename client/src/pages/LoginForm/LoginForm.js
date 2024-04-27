@@ -57,18 +57,16 @@ const LoginForm = () => {
             <input type="password" placeholder="Password" onChange={e => setPassword(e.target.value)} required />
             <i className="bx bxs-lock-alt"></i>
           </div>
-        {/* <div className="remember-forgot">
-          <label><input type="checkbox" />Remember Me</label>
-          <a href="#">Forgot Password</a>
-        </div> */}
-        <button type="submit" className="btn" >Login</button>
-        <div className="register-link">
-          <p>Don't have an account? <a href="#"
-          onClick={handleClick} >Register
-          </a></p>
-        
-        </div>
-      )}
+          {/* <div className="remember-forgot">
+            <label><input type="checkbox" />Remember Me</label>
+            <a href="#">Forgot Password</a>
+          </div> */}
+          <button type="submit" className="btn">Login</button>
+          <div className="register-link">
+            <p>Don't have an account? <a href="#" onClick={handleClick}>Register</a></p>
+          </div>
+        </form> {/* Make sure to close the form tag here */}
+      </div>
       {showErrorModal && (
         <div className="modal">
           <div className="modal-content">
@@ -80,5 +78,4 @@ const LoginForm = () => {
     </div>
   );
 };
-
 export default LoginForm;

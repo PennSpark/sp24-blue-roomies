@@ -15,16 +15,19 @@ function Item(data = []){
             {
                 data.map((value, index) => (
                     <div className="flex" key={index}>
+                        <div className="label">
+                            <div className="text-wrapper"> #{index + 1}</div>
+                        </div>
                         <div className="item">
                             <img src={value.img} alt="" />
             
                             <div className="info">
                                 <h3 className='name text-dark'>{value.name}</h3>    
-                                <span>{value.location}</span>
-                            </div>                
-                        </div>
-                        <div className="item">
+                                {/* <span>{value.location}</span> */}
+                            </div> 
+                            <div className="score">
                             <span>{value.score}</span>
+                        </div>               
                         </div>
                     </div>
                     )

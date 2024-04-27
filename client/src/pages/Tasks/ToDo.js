@@ -2,6 +2,8 @@ import React, {useState, useEffect} from 'react';
 import './App.css';
 import {AiOutlineDelete, AiOutlineEdit} from 'react-icons/ai';
 import {BsCheckLg} from 'react-icons/bs';
+import { Label } from '../Label';
+import { Trophy } from '../Trophy';
 
 function Todo () {
   const [isCompleteScreen, setIsCompleteScreen] = useState (false);
@@ -111,6 +113,8 @@ function Todo () {
 
   return (
     <div className='bodyWrapper'>
+
+      
 
       <div className="todo-wrapper">
         <div className="todo-input">

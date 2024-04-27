@@ -15,6 +15,15 @@
     background-size: cover;
     background-position: center;
 }
+.bodyWrapperBoard{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #ffffff;
+    background-size: cover;
+    background-position: center;
+}
 /* need to add css for wrapper in html */
 .wrapper{
     width: 420px;
@@ -26,6 +35,20 @@
     border-radius: 12px;
     padding: 30px 40px;
   }
+  .wrapperBoard{
+    width: 814px;
+    top: 0;
+    background: #f3f3f3;
+    /* border along the page */
+    border: 2px solid rgba(255, 255, 255, .2);
+    backdrop-filter: blur(9px);
+    color: black;
+    border-radius: 30px;
+    padding: 30px 40px;
+    height: 770px;
+    left: 0;
+  }
+  
 /* create css for h1 in wrapper */
 .wrapper h1{
     font-size: 36px;
@@ -154,3 +177,61 @@
     border-radius: 5px;
     cursor: pointer;
   }
+
+  .label {
+    height: 115px; /* Adjust height if necessary */
+    width: 98px; /* Adjust width if necessary */
+    position: relative; /* Added to position children absolutely within it */
+    display: flex;
+    align-items: center; /* Center the text vertically */
+    justify-content: center; /* Center the text horizontally */
+}
+
+.label .text-wrapper {
+    color: #ffb95c;
+    font-family: "Space Grotesk-Bold", Helvetica;
+    font-size: 80px; /* Adjusted for better fitting, was previously 90px */
+    font-weight: 700;
+    position: absolute; /* Changed from fixed to absolute */
+    left: 50%; /* Center horizontally */
+    top: 30%; /* Center vertically */
+    transform: translate(-50%, -50%); /* Adjust to center exactly */
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.trophy {
+    position: relative; /* Sets the positioning context for absolute children */
+    height: 76px; /* Set the height */
+    width: 76px; /* Set the width */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.trophy .ellipse {
+    background-color: #ffb95c;
+    border-radius: 38px;
+    height: 76px;
+    left: 0;
+    top: 0;
+    width: 76px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between; /* This will push the Trophy to the right */
+    align-items: center; /* This will vertically center the elements within the header */
+    width: 100%; /* Ensure the header spans the full width */
+    padding: 10px; /* Adjust padding as needed */
+}
+
+
+.vector {
+    position: absolute; /* Position the image absolutely to overlap the circle */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center the image within the trophy */
+    max-height: 70%; /* Adjust size to fit inside the circle */
+    max-width: 70%;
+}

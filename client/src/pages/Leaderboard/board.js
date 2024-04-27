@@ -3,6 +3,8 @@ import Profiles from './profiles';
 import { Leaderboard } from './database';
 import { Label } from '../Label';
 import EmojiEventsIcon from '@mui/icons-material/EmojiEvents'; 
+import '../style/lunastyle.css';
+import { Trophy } from '../Trophy';
 /*
 
 const Board = () => {
@@ -53,22 +55,32 @@ export default function Board() {
     return (
         
         <div className="board">
-            
-            <h1 className='leaderboard'>Leaderboard
-            </h1>
-            <div className='trophy'>
-            <EmojiEventsIcon />
+            <div className="header">
+                <Label />
+                <Trophy />
             </div>
+            <div className='bodyWrapperBoard' style={{ paddingBottom: '30px' }}>
+              <div className="col">
+            <h1 className='leaderboard' style={{ marginBottom: '10px', textAlign: 'center' }}>Leaderboard
+            </h1>
+            <div className='wrapperBoard' style={{ paddingTop: '10px', paddingBottom: '30px' }}>
+
+
+        
             
-            <div className="duration">
+            
+            {/* <div className="duration">
                 
                 <button onClick={handleClick} data-id='7'>7 Days</button>
                 <button onClick={handleClick} data-id='30'>30 Days</button>
                 <button onClick={handleClick} data-id='0'>All time</button>
-            </div>
+            </div> */}
 
             <Profiles Leaderboard={between(Leaderboard, period)}> </Profiles>
 
+            </div>
+        </div>
+        </div>
         </div>
     )
 }

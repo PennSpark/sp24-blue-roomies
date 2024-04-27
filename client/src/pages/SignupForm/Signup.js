@@ -1,10 +1,4 @@
-<<<<<<< HEAD
-=======
-import React from 'react';
-import { Label } from '../Label';
-import styles from '../style/lunastyle.css';
-import SignupForm from './SignupForm';
->>>>>>> Leaderboard
+
 
 import React, {useState} from 'react';
 import { useNavigate } from "react-router-dom"; 

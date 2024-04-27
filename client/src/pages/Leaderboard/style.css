@@ -22,9 +22,12 @@
     background-color: #FFFFFF;
     background-size: cover;
     background-position: center;
+    
 }
 
 .board .leaderboard {
+    text-align: center;
+    background-position: center;
     margin-bottom: 1em;
     top: 0;
     font-family: 'Space Grotesk-Bold', Helvetica, sans-serif;
@@ -37,10 +40,12 @@
     height: 89px;
     text-align: center; /* Center text horizontally */
     display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .board .trophy{
-    position: fixed;  /* Fixed positioning relative to the viewport */
+    align-items: right;  /* Fixed positioning relative to the viewport */
     top: 10px;        /* Distance from the top of the viewport */
     right: 10px;      /* Distance from the right of the viewport */
     z-index: 1000;
@@ -88,10 +93,20 @@
 #profile .flex .item{
     display: flex;
     align-items: center;
+    justify-content: center;
     color: var(--color-light);
+    background-color: #ffffff;
+    border-radius: 20px;
+    height: 110px;
+    left: 0;
+    top: 0;
 
 }
-
+.score {
+    padding-left: 20px; /* Spacing before score */
+    background-color: #ffffff;
+    color: #6d6c6c;
+}
 #profile .flex img{
     width: 20%;
     border-radius: 50%;
@@ -102,7 +117,12 @@
 }
 
 .text-dark{
-    color: var(--color-light);
+    color: #6d6c6c;
+    font-family: "Space Grotesk-Bold", Helvetica;
+    font-size: 25px;
+    font-weight: 600;
 }
+
+
 
 

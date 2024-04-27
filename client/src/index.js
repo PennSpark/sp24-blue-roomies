@@ -1,14 +1,11 @@
 import React from 'react';
-import {createRoot} from 'react-dom/client';
+import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-
 import reportWebVitals from './reportWebVitals';
 import './pages/Leaderboard/style.css';
 
 import MainApp from './pages/MainApp';
-import { QueryClient, QueryClientProvider } from 'react-query'; // Importing QueryClient and QueryClientProvider
-
 
 import {
   createBrowserRouter, 
@@ -17,6 +14,8 @@ import {
 } from "react-router-dom";
 import Login from './pages/LoginForm/LoginForm';
 import Signup from './pages/SignupForm/Signup';
+import Todo from './pages/Tasks/ToDo';
+import Board from './pages/Leaderboard/board';
 
 const router = createBrowserRouter([
   {
@@ -39,10 +38,14 @@ const router = createBrowserRouter([
   {
     path: "main",
     element: <MainApp/>
-  }
+  },
+  {
+    path:"/leaderboard",
+    element: <Board />
+  },
 ]);
 
-const root = createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <RouterProvider router={router}/>
