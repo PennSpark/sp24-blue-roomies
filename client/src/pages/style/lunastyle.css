@@ -6,12 +6,30 @@
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
   }
+.bodyWrapper2 {
+    background: url(bgright.png) no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+
+    
+}
 .bodyWrapper{
+    background: url(bg4.png) no-repeat;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: url(bg4.png) no-repeat;
+    background: url(bgright.png) no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.bodyWrapperBoard{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #ffffff;
     background-size: cover;
     background-position: center;
 }
@@ -26,6 +44,20 @@
     border-radius: 12px;
     padding: 30px 40px;
   }
+  .wrapperBoard{
+    width: 814px;
+    top: 0;
+    background: #f3f3f3;
+    /* border along the page */
+    border: 2px solid rgba(255, 255, 255, .2);
+    backdrop-filter: blur(9px);
+    color: black;
+    border-radius: 30px;
+    padding: 30px 40px;
+    height: 770px;
+    left: 0;
+  }
+  
 /* create css for h1 in wrapper */
 .wrapper h1{
     font-size: 36px;
@@ -153,4 +185,264 @@
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
+  }
+
+  .label {
+    height: 115px; /* Adjust height if necessary */
+    width: 98px; /* Adjust width if necessary */
+    position: relative; /* Added to position children absolutely within it */
+    display: flex;
+    align-items: center; /* Center the text vertically */
+    justify-content: center; /* Center the text horizontally */
+}
+
+.label .text-wrapper {
+    color: #ffb95c;
+    font-family: "Space Grotesk-Bold", Helvetica;
+    font-size: 80px; /* Adjusted for better fitting, was previously 90px */
+    font-weight: 700;
+    position: absolute; /* Changed from fixed to absolute */
+    left: 50%; /* Center horizontally */
+    top: 30%; /* Center vertically */
+    transform: translate(-50%, -50%); /* Adjust to center exactly */
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.trophy {
+    position: relative; /* Sets the positioning context for absolute children */
+    height: auto; /* Set the height */
+    width: auto; /* Set the width */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+}
+.trophy .ellipse {
+    background-color: #ffb95c;
+    border-radius: 38px;
+    height: 76px;
+    left: 0;
+    top: 0;
+    width: 76px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between; /* This will push the Trophy to the right */
+    align-items: center; /* This will vertically center the elements within the header */
+    width: 100%; /* Ensure the header spans the full width */
+    padding: 10px; /* Adjust padding as needed */
+}
+
+
+.vector {
+    position: absolute; /* Position the image absolutely to overlap the circle */
+    top: 50%;
+    left: 24%;
+    transform: translate(-50%, -50%); /* Center the image within the trophy */
+    max-height: 70%; /* Adjust size to fit inside the circle */
+    max-width: 70%;
+}
+.parent {
+    display: flex;
+    justify-content: space-around; /* Distributes space around items */
+    align-items: center; /* Aligns items vertically in the center */
+    flex-wrap: wrap; /* Allows items to wrap onto the next line if not enough space */
+    padding: 10px; /* Adds padding inside the parent container */
+    margin: 10px auto; /* Center the parent with auto margins on both sides, if needed */
+    max-width: 100%; /* Ensures the parent does not exceed the width of its container */
+}
+.child1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 220px;
+    padding: 10px;
+    margin: 10px;
+    background-color: #fff;
+  }
+  
+  .child1 .text-wrapper {
+    color: #00b8b6;
+    font-family: "Space Grotesk-Bold", Helvetica;
+    font-size: 80px;
+    font-weight: 700;
+    letter-spacing: 0;
+    line-height: normal;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .box1 {
+    width: 577px;
+  }
+  
+  .box1 .rectangle {
+    background: #f3f3f3;
+    border-radius: 40px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .textBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .textBox .rectangle {
+    background-color: #d9d9d996;
+    border-radius: 31px;
+    height: 79px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .rectangle.blue {
+    background-color: #00b8b6;
+  }
+
+  .col {
+    display: grid;
+    place-items: center; /* Shortcut for align-items and justify-items */
+    height: 100%; /* Optional: Set a specific height if necessary */
+}
+
+.group {
+    height: auto;
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; 
+    text-align: center;
+    margin-top: 13px;
+}
+
+.group .text-wrapper {
+    color: #00b8b6;
+    font-family: "Space Grotesk-Bold", Helvetica;
+    font-size: 30px;
+    font-weight: 700;
+    left: 47px;
+    letter-spacing: 0;
+    line-height: normal;
+    top: 0;
+    text-align: center;
+}
+
+.group .fluent-person {
+    height: auto;
+    width: 43px;
+}
+
+.text-wrapper.white-text {
+    color: white; 
+}
+
+.label1 {
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 64px;
+    width: 316px;
+}
+
+.label1 .your-roomies {
+    margin-bottom: 60px;
+    margin-left: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: transparent;
+    font-family: "Space Grotesk-Bold", Helvetica;
+    font-size: 50px; /* Adjusted for better fitting, was previously 90px */
+    font-weight: 700;
+    transform: translate(-50%, -50%); /* Adjust to center exactly */
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+    text-align: center;
+}
+
+.label1 .text-wrapper {
+    color: #6d6c6c;
+    font-size: 50px;
+    margin-right: 10px;
+    margin-top: 20px;
+}
+
+.label1 .span {
+    color: #00b8b6;
+}
+
+.label1 .text-wrapper-2 {
+    color: #ffb95c;
+}
+
+.label1 .text-wrapper-3 {
+    color: #ff8c83;
+}
+
+
+.trophy .group {
+    background-color: #292929;
+    border-radius: 38px;
+    height: 76px;
+    left: 0;
+    top: 0;
+    width: 76px;
+}
+
+.trophy .iconamoon-profile {
+    height: 76px;
+    left: 13px;
+    top: 13px;
+    width: 76x;
+}
+.box2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 677px;
+    width: 577px;
+  }
+  
+  .box2 .rectangle {
+    background: #f3f3f3;
+    border-radius: 40px;
+    height: 677px;
+    left: 0;
+    top: 0;
+    width: 577px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 60px;
+  }
+  
+  .box2 p {
+    margin-bottom: 10px;
+  }
+  
+  .box2 ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .box2 li {
+    margin-bottom: 5px;
   }

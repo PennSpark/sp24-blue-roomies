@@ -1,68 +1,126 @@
-import React, {useState} from 'react';
-import { useNavigate } from "react-router-dom"; 
-import '../style/lunastyle.css';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { Label } from '../Label';
+import { Trophy } from '../Trophy';
+import './profile.css';
 
-//doesn't work yet,, just putting a rough structure - must use get and useEffect???
+function Profile() {
+  const [userDetails, setUserDetails] = useState({ username: '', password: '' });
+  const [groupDetails, setGroupDetails] = useState({ name: '', description: '', code: '' });
+  const [roomies, setRoomies] = useState([]);
 
-const Profile = () => {
+  const loggedInUserGroup = localStorage.getItem('userGroup');
+  const loggedInUser = localStorage.getItem('username');
 
-  const navigate = useNavigate(); 
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+  useEffect(() => {
+    // Fetch user details from the server
+    axios.get(`http://localhost:3000/users/${loggedInUser}`)
+  .then(res => {
+    console.log('User data response:', res.data); // Log the response data
+    if (res.data && res.data.users && res.data.users.length > 0) {
+        // If the response is { users: [user] }
+        setUserDetails(res.data.users[0]);
+      } else {
+        console.log('No user data found');
+      }
+  })
+  .catch(err => {
+    console.error('Error fetching user info:', err);
+  });
+    // Fetch group information and members from the server
+    if (loggedInUserGroup) {
+      // Fetch group details
+      axios.get(`http://localhost:3000/groups/${loggedInUserGroup}`)
+        .then(res => {
+          if (res.data && res.data.group) {
+            setGroupDetails({
+              name: res.data.group.group_name,
+              description: res.data.group.group_description,
+              code: res.data.group.group_password // This should be handled cautiously
+            });
+          }
+        })
+        .catch(err => {
+          console.error('Error fetching group info:', err);
+        });
 
- 
-  function handleSubmit(event) { 
-    event.preventDefault()
-    axios.get('http://localhost:3000/profile', {username})
-    .then(res => {
-      console.log(res)
-      if (res.data) {
-        navigate('/main')
-      }})
-    .catch(err => console.log(err));
-  }
-
-  const handleClick = () => {
-    navigate('/signup'); 
-  };
-
-  const handleClick1 = () => {
-    navigate('/login'); 
-  };
-
+      // Fetch group members
+      axios.get(`http://localhost:3000/users/group/${loggedInUserGroup}`)
+        .then(res => {
+          if (res.data && res.data.users) {
+            setRoomies(res.data.users.map(u => u.username));
+          }
+        })
+        .catch(err => {
+          console.error('Error fetching group members:', err);
+        });
+    }
+  }, [loggedInUser, loggedInUserGroup]);
 
   return (
-    <div className='bodyWrapper'>
-    <div className="wrapper">
-      <form onSubmit={handleSubmit}>
-        <h1>Login</h1>
-
-        <div className="input-box">
-            <input type="text" placeholder="Username" onChange={e => setUsername(e.target.value)} required />
-            <i className="bx bxs-user"></i>
-          </div>
-          <div className="input-box">
-            <input type="password" placeholder="Password" onChange={e => setPassword(e.target.value)} required />
-            <i className="bx bxs-lock-alt"></i>
-          </div>
-        {/* <div className="remember-forgot">
-          <label><input type="checkbox" />Remember Me</label>
-          <a href="#">Forgot Password</a>
-        </div> */}
-        <button type="submit" className="btn" onClick={handleClick1}>
-        Login</button>
-        <div className="register-link">
-          <p>Don't have an account? <a href="#"
-          onClick={handleClick} >Register
-          </a></p>
-        
+    <div className='bodyWrapper2'>
+      <div className="header">
+        <Label />
+        <Trophy />
+      </div>
+      <div className="todo-wrapper">
+        <div className="profile-text">
+          <label>Your Info</label>
         </div>
-        
-      </form>
-    </div>
+        <div className="user-list">
+          <div>
+            <span className="user-name2">username</span>
+            <div className="user-details">
+              <span className="user-name">Gabriel</span>
+            </div>
+          </div>
+          <div className="user-name2">
+            <span className="user-name2">password</span>
+            <div className="user-details">
+              {/* Password field should be treated securely, consider not displaying it or using a masked input */}
+              <span className="user-name">12345</span>
+            </div>
+          </div>
+        </div>
+        <div className="profile-text">
+          <label>Room Info</label>
+        </div>
+        <div className="user-list">
+          <div>
+            <span className="user-name2">group name</span>
+            <div className="user-details">
+              <span className="user-name">{groupDetails.name}</span>
+            </div>
+          </div>
+          <div className="user-name2">
+            <span className="user-name2">group description</span>
+            <div className="user-details">
+              <span className="user-name">{groupDetails.description}</span>
+            </div>
+          </div>
+          <div className="user-name2">
+            <span className="user-name2">group code</span>
+            <div className="user-details">
+              {/* Group code field should be treated securely, consider not displaying it or using a masked input */}
+              <span className="user-name">{groupDetails.code}</span>
+            </div>
+          </div>
+          <div className="user-name2">
+            <span className="user-name2">roomies</span>
+            <div className="user-details">
+              <span className="user-name">{roomies.join(', ')}</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
-};
+}
 
 export default Profile;
+
+
+
+
+
+

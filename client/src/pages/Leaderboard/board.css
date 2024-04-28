@@ -1,0 +1,81 @@
+body {
+  background-color: radial-gradient(circle, #ff8c83, #FFB95C, #00b8b6);
+  color: white;
+  overflow: hidden;
+}
+span {
+  color: #6d6c6c;
+
+}
+.todo-wrapper {
+  background: white;
+  padding: 2%;
+  padding-top: 20px;
+  width: 60%;
+  margin-top: 1%;
+  overflow-y: auto;
+  outline: 10px solid #ff8c83;
+  border-radius: 12px;
+  
+}
+.user-image img {
+  width: 80px; /* Or the size you want */
+  height: auto; /* To maintain aspect ratio */
+  margin-right: 10px; /* Adjust the margin as needed */
+}
+
+.leaderboard-text {
+  color: #FFB95C;
+  text-align: center;
+  font-size: 65px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.user-list {
+  background-color: #e6e6e6;
+  border-radius: 12px;
+  padding: 40px;
+  opacity: 0.8;
+}
+
+.user-list-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.user-rank {
+  color: #6d6c6c;
+  font-size: 70px;
+  font-weight: bold;
+  margin-right: 100px;
+}
+
+.user-details {
+  background-color: white;
+  padding: 20px 20px;
+  border-radius: 30px;
+  flex-grow: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 40px;
+}
+
+.user-name {
+  color: #6d6c6c;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.user-name2 {
+  color: #ffb95c;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.user-points {
+  color: #6d6c6c;
+  font-size: 30px;
+}

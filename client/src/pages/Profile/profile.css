@@ -1,0 +1,22 @@
+.profile-text {
+    color: #00b8b6;
+    text-align: center;
+    font-size: 65px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+
+  .user-details2 {
+    background-color: white;
+    padding: 20px 20px;
+    border-radius: 30px;
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 40px;
+  }
+
+  .user-name2 { 
+    margin-top: 30px;
+  }

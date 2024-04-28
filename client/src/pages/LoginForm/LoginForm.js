@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import axios from 'axios';
 import '../style/lunastyle.css';
 
-const LoginForm = () => {
+const LoginForm = ({ onLogin = () => {} }) => {
   const navigate = useNavigate();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -17,6 +17,12 @@ const LoginForm = () => {
       .then(res => {
         console.log(res);
         if (res.status === 200) {
+          localStorage.setItem('userGroup', res.data.user.group_name);
+          localStorage.setItem('username', res.data.user.username);
+
+
+          onLogin(username);
+          // Store the user's group information in local storage
           setShowSuccessModal(true);
           setTimeout(() => {
             setShowSuccessModal(false);

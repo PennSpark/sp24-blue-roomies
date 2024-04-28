@@ -3,8 +3,9 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-
+import Board from './pages/Leaderboard/Board';
 import MainApp from './pages/MainApp';
+import Profile from './pages/Profile/Profile';
 
 import {
   createBrowserRouter, 
@@ -35,6 +36,16 @@ const router = createBrowserRouter([
   {
     path: "main",
     element: <MainApp/>
+  }
+  ,
+  {
+    path: "board",
+    element: <Board/>
+  }
+  ,
+  {
+    path: "profile",
+    element: <Profile/>
   }
 ]);
 

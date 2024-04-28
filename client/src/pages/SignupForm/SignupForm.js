@@ -12,10 +12,14 @@ const SignupForm = () => {
   const [showSuccessModal, setShowSuccessModal] = useState(false);
   const [showErrorModal, setShowErrorModal] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
+  const [isNewGroup, setIsNewGroup] = useState(true);
+  const [groupPassword, setGroupPassword] = useState('');
+
+
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    axios.post('http://localhost:3000/signup', { username, password, groupName, groupDescription })
+    axios.post('http://localhost:3000/signup', { username, password, groupName, groupDescription, groupPassword })
       .then(res => {
         setShowSuccessModal(true);
         setTimeout(() => {
@@ -27,6 +31,8 @@ const SignupForm = () => {
         if (err.response) {
           if (err.response.status === 409) {
             setErrorMessage('User already exists. Please try logging in or use a different email.');
+          } else if (err.response.status === 401) {
+            setErrorMessage('Incorrect group password. Please try again.');
           } else {
             setErrorMessage('An unexpected error occurred. Please try again later.');
           }
@@ -48,6 +54,10 @@ const SignupForm = () => {
     setErrorMessage('');
   };
 
+  const toggleGroupOption = () => {
+    setIsNewGroup(!isNewGroup);
+  };
+
   return (
     <div className='bodyWrapper'>
       <div className="wrapper">
@@ -61,14 +71,37 @@ const SignupForm = () => {
             <input type="password" placeholder="Password" onChange={e => setPassword(e.target.value)} required />
             <i className="bx bxs-lock-alt"></i>
           </div>
-          <div className="input-box">
-            <input type="text" placeholder="Group Name" onChange={e => setGroupName(e.target.value)} required />
-            <i className="bx bxs-group"></i>
-          </div>
-          <div className="input-box">
-            <input type="text" placeholder="Group Description" onChange={e => setGroupDescription(e.target.value)} />
-            <i className="bx bxs-info-circle"></i>
-          </div>
+          {isNewGroup ? (
+            <>
+              <div className="input-box">
+                <input type="text" placeholder="Group Name" onChange={e => setGroupName(e.target.value)} required />
+                <i className="bx bxs-group"></i>
+              </div>
+              <div className="input-box">
+                <input type="text" placeholder="Group Description" onChange={e => setGroupDescription(e.target.value)} />
+                <i className="bx bxs-info-circle"></i>
+              </div>
+              <div className="input-box">
+                <input type="text" placeholder="Group Code" onChange={e => setGroupPassword(e.target.value)} required />
+                <i className="bx bxs-key"></i>
+              </div>
+              
+            </>
+          ) : (
+            <>
+              <div className="input-box">
+                <input type="text" placeholder="Existing Group Name" onChange={e => setGroupName(e.target.value)} required />
+                <i className="bx bxs-group"></i>
+              </div>
+              <div className="input-box">
+                <input type="text" placeholder="Group Code" onChange={e => setGroupPassword(e.target.value)} required />
+                <i className="bx bxs-key"></i>
+              </div>
+            </>
+          )}
+          <button type="button" onClick={toggleGroupOption}>
+            {isNewGroup ? 'Join Existing Group' : 'Create New Group'}
+          </button>
           <button type="submit" className="btn">Sign Up</button>
           <div className="login-link">
             <p>Already have an account? <a href="#" onClick={handleClickLogin}>Login</a></p>
